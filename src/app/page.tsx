@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
 const Home = async () => {
   const session = await getServerSession();
@@ -6,7 +7,7 @@ const Home = async () => {
   console.log({ session });
 
   if (!session) {
-    return <p>You must be signed in ...</p>;
+    redirect("/api/auth/signin");
   }
 
   return (
