@@ -10,15 +10,15 @@ interface Props {
   };
 }
 
-export const generateStaticParams = async () => {
-  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
-    (res) => res.json()
-  );
+// export const generateStaticParams = async () => {
+//   const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
+//     (res) => res.json()
+//   );
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-};
+//   return posts.map((post) => ({
+//     slug: post.slug,
+//   }));
+// };
 
 const BlogPostPage = async ({ params }: Props) => {
   const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
