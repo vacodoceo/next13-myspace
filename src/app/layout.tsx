@@ -2,6 +2,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { NavMenu } from "./NavMenu";
 import { AuthProvider } from "./AuthProvider";
+import { Amplify } from "aws-amplify";
+
+Amplify.configure({ ssr: true });
 
 const inter = Inter({ subsets: ["latin"] });
 
