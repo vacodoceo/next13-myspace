@@ -1,17 +1,18 @@
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+"use client";
+
+import { getRandomInsect } from "@/actions/get-random-insect";
 
 const Home = async () => {
-  const session = await getServerSession(authOptions);
-
-  if (!session) {
-    redirect("/api/auth/signin");
-  }
+  const handleClick = async () => {
+    const insect = await getRandomInsect();
+    alert(`You received an ${insect}!`);
+  };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Holita
+    <main className="flex flex-col items-center justify-between p-8">
+      <h1>Holita</h1>
+
+      <button onClick={handleClick}>Get insect</button>
     </main>
   );
 };
