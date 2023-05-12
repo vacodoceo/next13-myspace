@@ -4,8 +4,10 @@ import { getRandomInsect } from "@/actions/get-random-insect";
 
 export const GetInsectButton = () => {
   const handleClick = async () => {
-    const insect = await getRandomInsect();
-    alert(`You received an ${insect}!`);
+    const { insect, environment } = await getRandomInsect();
+    alert(
+      `You received an ${insect}!\nPS: This was running in ${environment} environment`
+    );
   };
 
   return (

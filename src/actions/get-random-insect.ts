@@ -3,5 +3,8 @@
 import { faker } from "@faker-js/faker";
 
 export const getRandomInsect = async () => {
-  return faker.animal.insect();
+  return {
+    insect: faker.animal.insect(),
+    environment: process.env.ENVIRONMENT,
+  };
 };

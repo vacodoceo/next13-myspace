@@ -1,9 +1,10 @@
 import { GetInsectButton } from "@/components/buttons/GetInsectButton";
+import { Header } from "./Header";
 
 const Home = async () => {
   return (
     <main className="flex flex-col items-center p-8 space-y-8">
-      <h1>Holita</h1>
+      <Header />
 
       <GetInsectButton />
     </main>
